@@ -3,316 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usługi Remontowe i Ogrodowe | Profesjonalne Wykończenia i Ogród</title>
+    <title>TOMSON i MATI - Usługi Remontowe, Ogrodnicze, Przeprowadzki</title>
     <style>
-        /* CSS / Styl strony */
-        :root {
-            --primary-color: #2e7d32; /* Zielony akcent ogrodowy */
-            --secondary-color: #1565c0; /* Niebieski akcent budowlany */
-            --dark-color: #212121;
-            --light-color: #f4f6f8;
-            --white: #ffffff;
-        }
-
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
         }
 
         body {
+            background-color: #f4f6f8;
+            color: #333;
             line-height: 1.6;
-            color: var(--dark-color);
-            background-color: var(--light-color);
         }
 
-        /* Header / Nawigacja */
         header {
-            background-color: var(--dark-color);
-            color: var(--white);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--white);
-        }
-
-        header .logo span {
-            color: #4caf50;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #4caf50;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-            color: var(--white);
+            background: linear-gradient(135deg, #2c3e50, #3498db);
+            color: white;
             text-align: center;
-            padding: 6rem 1rem;
+            padding: 50px 20px;
         }
 
-        .hero h1 {
+        header h1 {
             font-size: 2.8rem;
-            margin-bottom: 1rem;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
-        .hero p {
+        header p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            opacity: 0.9;
         }
 
-        .btn {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 0.8rem 2rem;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            transition: background 0.3s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            background-color: #1b5e20;
-        }
-
-        /* Sekcja Usług */
         .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 4rem 1rem;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
 
-        .section-title {
+        .cta-box {
+            background-color: #e74c3c;
+            color: white;
             text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-            position: relative;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background-color: var(--primary-color);
-            margin: 0.5rem auto 0;
-            border-radius: 2px;
+        .cta-box h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .phone-button {
+            display: inline-block;
+            background-color: white;
+            color: #e74c3c;
+            font-size: 1.6rem;
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 10px;
+            transition: transform 0.2s;
+        }
+
+        .phone-button:hover {
+            transform: scale(1.05);
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 20px;
         }
 
         .service-card {
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-left: 5px solid #3498db;
         }
 
         .service-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
         }
 
-        .service-card ul {
-            list-style-type: square;
-            padding-left: 1.2rem;
-        }
-
-        .service-card ul li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Kontakt i Wycena */
-        .contact-section {
-            background-color: var(--white);
-            border-radius: 8px;
-            padding: 3rem 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-
-        .contact-info p {
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.4rem;
-            font-weight: 600;
-        }
-
-        .form-group input, .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-color);
-            color: var(--white);
+        .info-section {
+            background: #2c3e50;
+            color: white;
             text-align: center;
-            padding: 1.5rem;
-            margin-top: 3rem;
+            padding: 30px 20px;
+            margin-top: 40px;
+            border-radius: 10px;
         }
 
-        /* RWD - Dostosowanie do telefonów */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-            nav a {
-                margin: 0 0.5rem;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
+        .info-section p {
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
-    <!-- Nawigacja -->
     <header>
-        <div class="logo">USŁUGI <span>DOM & OGRÓD</span></div>
-        <nav>
-            <a href="#uslugi">Usługi</a>
-            <a href="#o-nas">O nas</a>
-            <a href="#kontakt">Kontakt</a>
-        </nav>
+        <h1>TOMSON i MATI</h1>
+        <p>REMONTOWE • OGRODNICZE • PRZEPROWADZKI • I WIĘCEJ</p>
     </header>
 
-    <!-- Baner Główny -->
-    <section class="hero">
-        <h1>Kompleksowe Usługi Remontowe i Ogrodnicze</h1>
-        <p>Solidność, terminowość i precyzja wykonania. Zamów bezpłatną wycenę już dziś!</p>
-        <a href="#kontakt" class="btn">Darmowa Wycena</a>
-    </section>
+    <div class="container">
 
-    <!-- Sekcja Usług -->
-    <main class="container" id="uslugi">
-        <h2 class="section-title">Co możemy dla Ciebie zrobić?</h2>
-        
+        <div class="cta-box">
+            <h2>ZADZWOŃ TERAZ!</h2>
+            <a href="tel:793372407" class="phone-button">📞 793 372 407</a>
+            <p style="margin-top: 10px;">E-mail: tompas34@gmail.com</p>
+        </div>
+
+        <h2 style="text-align: center; margin-bottom: 20px; color: #2c3e50;">Nasza Oferta</h2>
+
         <div class="services-grid">
-            <!-- Karta 1: Remonty -->
             <div class="service-card">
-                <h3>Prace Remontowo-Budowlane</h3>
-                <ul>
-                    <li>Wykończenia wnętrz i malowanie ścian</li>
-                    <li>Układanie płytki, paneli oraz ścianki działowe</li>
-                    <li>Drobne naprawy oraz prace instalacyjne</li>
-                    <li>Montaż mebli i wyposażenia</li>
-                </ul>
+                <h3>🛠️ Usługi Remontowe</h3>
+                <p>Malowanie, gładzie, układanie płytek, panele podłogowe, drobne naprawy hydrauliczne i elektryczne.</p>
             </div>
 
-            <!-- Karta 2: Ogród -->
             <div class="service-card">
-                <h3>Pielęgnacja Ogrodów i Terenu</h3>
-                <ul>
-                    <li>Koszenie trawników i porządkowanie działek</li>
-                    <li>Aranżacja i drobne prace ogrodowe</li>
-                    <li>Cięcie krzewów oraz zakładanie ogrodzeń</li>
-                    <li>Prace przygotowawcze i porządkowe w terenie</li>
-                </ul>
+                <h3>🏗️ Wyburzenia & Rozbiórki</h3>
+                <p>Małe i duże wyburzenia, skuwanie tynków, demontaż konstrukcji drewnianych i murowanych.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>🚚 Przeprowadzki</h3>
+                <p>Transport mebli i gabarytów, pakowanie i zabezpieczanie mienia, usługi znoszenia i wnoszenia.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>🌱 Prace Ogrodnicze</h3>
+                <p>Koszenie trawników, przycinanie żywopłotów, zakładanie ogrodów, porządki sezonowe, pielęgnacja roślin.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>🧹 Opróżnianie Pomieszczeń</h3>
+                <p>Mieszkań, domów, piwnic, strychów, garaży oraz innych budynków gospodarczych. Szybkie i sprawne działanie.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>♻️ Odbiór AGD & Elektrośmieci</h3>
+                <p>Starych lodówek, pralek, telewizorów, komputerów i innych urządzeń elektronicznych. Ekologiczna utylizacja.</p>
             </div>
         </div>
-    </main>
 
-    <!-- Sekcja Kontaktowa -->
-    <section class="container" id="kontakt">
-        <div class="contact-section">
-            <h2 class="section-title">Skontaktuj się z nami</h2>
-            <div class="contact-container">
-                
-                <!-- Informacje -->
-                <div class="contact-info">
-                    <h3>Bezpośredni kontakt</h3>
-                    <p><strong>Telefon:</strong> <a href="tel:+48123456789" style="color:var(--primary-color); text-decoration:none;">+48 123 456 789</a></p>
-                    <p><strong>E-mail:</strong> kontakt@twosrodek.pl</p>
-                    <p><strong>Obszar działania:</strong> Cały powiat i okolice (dojazd do klienta)</p>
-                    <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #666;">
-                        * Wycena na miejscu u klienta jest całkowicie darmowa i do niczego nie zobowiązuje.
-                    </p>
-                </div>
-
-                <!-- Formularz -->
-                <form action="https://formspree.io/f/mojejmail@example.com" method="POST">
-                    <div class="form-group">
-                        <label for="name">Twoje Imię:</label>
-                        <input type="text" id="name" name="name" required placeholder="np. Jan">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Numer Telefonu:</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="np. 600 000 000">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Opis Zlecenia / Pytanie:</label>
-                        <textarea id="message" name="message" rows="4" placeholder="Opisz krótko, co jest do zrobienia..."></textarea>
-                    </div>
-                    <button type="submit" class="btn" style="width: 100%;">Wyślij Zapytanie</button>
-                </form>
-
-            </div>
+        <div class="info-section">
+            <p><strong>Wszystkie usługi w jednym miejscu!</strong></p>
+            <p>📍 ZAKRES DZIAŁANIA: CAŁE PODKARPACIE</p>
         </div>
-    </section>
 
-    <!-- Stopka -->
+    </div>
+
     <footer>
-        <p>&copy; 2026 Usługi Dom & Ogród. Wszelkie prawa zastrzeżone.</p>
+        &copy; TOMSON i MATI - Wszelkie prawa zastrzeżone.
     </footer>
 
 </body>
