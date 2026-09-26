@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usługi Remontowe i Ogrodowe | Profesjonalne Wykończenia i Ogród</title>
+    <style>
+        /* CSS / Styl strony */
+        :root {
+            --primary-color: #2e7d32; /* Zielony akcent ogrodowy */
+            --secondary-color: #1565c0; /* Niebieski akcent budowlany */
+            --dark-color: #212121;
+            --light-color: #f4f6f8;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        /* Header / Nawigacja */
+        header {
+            background-color: var(--dark-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--white);
+        }
+
+        header .logo span {
+            color: #4caf50;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4caf50;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 6rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #1b5e20;
+        }
+
+        /* Sekcja Usług */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        .service-card ul {
+            list-style-type: square;
+            padding-left: 1.2rem;
+        }
+
+        .service-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Kontakt i Wycena */
+        .contact-section {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 3rem 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--white);
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* RWD - Dostosowanie do telefonów */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            nav a {
+                margin: 0 0.5rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nawigacja -->
+    <header>
+        <div class="logo">USŁUGI <span>DOM & OGRÓD</span></div>
+        <nav>
+            <a href="#uslugi">Usługi</a>
+            <a href="#o-nas">O nas</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Baner Główny -->
+    <section class="hero">
+        <h1>Kompleksowe Usługi Remontowe i Ogrodnicze</h1>
+        <p>Solidność, terminowość i precyzja wykonania. Zamów bezpłatną wycenę już dziś!</p>
+        <a href="#kontakt" class="btn">Darmowa Wycena</a>
+    </section>
+
+    <!-- Sekcja Usług -->
+    <main class="container" id="uslugi">
+        <h2 class="section-title">Co możemy dla Ciebie zrobić?</h2>
+        
+        <div class="services-grid">
+            <!-- Karta 1: Remonty -->
+            <div class="service-card">
+                <h3>Prace Remontowo-Budowlane</h3>
+                <ul>
+                    <li>Wykończenia wnętrz i malowanie ścian</li>
+                    <li>Układanie płytki, paneli oraz ścianki działowe</li>
+                    <li>Drobne naprawy oraz prace instalacyjne</li>
+                    <li>Montaż mebli i wyposażenia</li>
+                </ul>
+            </div>
+
+            <!-- Karta 2: Ogród -->
+            <div class="service-card">
+                <h3>Pielęgnacja Ogrodów i Terenu</h3>
+                <ul>
+                    <li>Koszenie trawników i porządkowanie działek</li>
+                    <li>Aranżacja i drobne prace ogrodowe</li>
+                    <li>Cięcie krzewów oraz zakładanie ogrodzeń</li>
+                    <li>Prace przygotowawcze i porządkowe w terenie</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- Sekcja Kontaktowa -->
+    <section class="container" id="kontakt">
+        <div class="contact-section">
+            <h2 class="section-title">Skontaktuj się z nami</h2>
+            <div class="contact-container">
+                
+                <!-- Informacje -->
+                <div class="contact-info">
+                    <h3>Bezpośredni kontakt</h3>
+                    <p><strong>Telefon:</strong> <a href="tel:+48123456789" style="color:var(--primary-color); text-decoration:none;">+48 123 456 789</a></p>
+                    <p><strong>E-mail:</strong> kontakt@twosrodek.pl</p>
+                    <p><strong>Obszar działania:</strong> Cały powiat i okolice (dojazd do klienta)</p>
+                    <p style="margin-top: 1.5rem; font-size: 0.95rem; color: #666;">
+                        * Wycena na miejscu u klienta jest całkowicie darmowa i do niczego nie zobowiązuje.
+                    </p>
+                </div>
+
+                <!-- Formularz -->
+                <form action="https://formspree.io/f/mojejmail@example.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">Twoje Imię:</label>
+                        <input type="text" id="name" name="name" required placeholder="np. Jan">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Numer Telefonu:</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="np. 600 000 000">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Opis Zlecenia / Pytanie:</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Opisz krótko, co jest do zrobienia..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Wyślij Zapytanie</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Stopka -->
+    <footer>
+        <p>&copy; 2026 Usługi Dom & Ogród. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+
+</body>
+</html>
